@@ -1,62 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>360度動画</title>
-  <script src="aframe-v1.2.0.min.js"></script>
+  <script src="aframe.min.js"></script>
 </head>
+
 <body>
-<a-scene>
-  <a-assets>
-  　<video id="video" src="360VR.mp4" preload="auto" autoplay muted></video>
-  </a-assets>
-  <a-videosphere src="#video" rotation="0 -65 0"></a-videosphere>
-  <a-sound src="rei1.mp3" autoplay="true" position="0 2 5"></a-sound>
-  <!-- 動画の autoplay が効かない場合用の、再生・停止ボタン -->
-  <a-box id="play" position="-1 0 -1" scale="0.5 0.5 0.01" src="start2.jpeg"></a-box>
-  <a-box id="stop" position="0 0 -1" scale="0.5 0.5 0.01" src="stop2.jpg"></a-box>
-  <a-box id="link" position="1 0 -1" scale="0.5 0.5 0.01" src="repeat.jpeg" link1></a-box>
+  <a-scene id="scene" id="scene2"  >
+    <a-assets>
+      　<video id="video" src="VRAir23.mp4" preload="auto" autoplay muted></video>
+    </a-assets>
+    <a-videosphere src="#video" rotation="0 -90 0"></a-videosphere>
+    <!-- 動画の autoplay が効かない場合用の、再生・停止ボタン -->
+    <a-box id="play" position="-1 0 -1" scale="0.5 0.5 0.01" src="start2.jpeg"></a-box>
+    <a-box id="stop" position="0 0 -1" scale="0.5 0.5 0.01" src="stop2.jpg"></a-box>
+    <a-box id="link" position="1 0 -1" scale="0.5 0.5 0.01" src="repeat.jpeg"></a-box>
 
-  
+    <!-- TODO:視点 -->
+    <a-camera>
+      <a-cursor fuse="true" fuse-timeout="1000"></a-cursor>
+    </a-camera>
 
-  <!-- 再生・停止ボタンを押すための視線カーソル（スマホ用） -->
-  <a-camera>
-    <a-cursor fuse="true" fuse-timeout="1000"></a-cursor>
-  </a-camera>
-  
-</a-scene>
+  </a-scene>
 
-<!-- 動画の再生・停止のための JavaScript -->
-<script>
-const video = document.getElementById("video");   // 動画の取得
-const btnPlay = document.getElementById("play");  // 再生ボタンの取得
-btnPlay.addEventListener("click", (e) => {        // クリックされたら
-  video.play();                                   // 動画を再生
-});
-const btnStop = document.getElementById("stop");  // 停止ボタンの取得
-btnStop.addEventListener("click", (e) => {        // クリックされたら
-  video.pause();                                  // 動画を停止
-});
-</script>
-
-<script>
-  function toLink(){
-    window.location.href = "https://19j5126.github.io/rei2/"
-  }
-
-  AFRAME.registerComponent('link1', {
-    init: function () {  //aframeのコンポーネントの考え方
-      console.log(this);　//aframeのコンポーネントの考え方
-      const element = this.el;　　//aframeのコンポーネントの考え方
-      element.addEventListener('mouseenter', function () {　//マウスの代わりに視線でクリック
-        console.log('mouseenter');
-        setTimeout(toLink, 3000); //toLink関数を実行
-        
-      });
-    }
-  });
-
-</script>
-
+  <script src="index.js"></script>
 </body>
+
 </html>
