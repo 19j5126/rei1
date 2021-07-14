@@ -10,7 +10,7 @@ btnStop.addEventListener("click", (e) => {        // クリックされたら
 });
 
 function toLink1() {
-    window.location.href = "./360VR.html"
+    window.location.href = "https://19j5126.github.io/rei3/"
 }
 AFRAME.registerComponent('linkbox1', {
     init: function () {  //aframeのコンポーネントの考え方
