@@ -25,7 +25,7 @@ AFRAME.registerComponent('linkbox1', {
 });
 
 function toLink2() {
-    window.location.href = "./wine.html"
+    window.location.href = "https://19j5126.github.io/rei5/"
 }
 AFRAME.registerComponent('linkbox2', {
     init: function () {  //aframeのコンポーネントの考え方
