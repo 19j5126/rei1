@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>360度動画</title>
   <script src="aframe.min.js"></script>
+  <script src="play-on-touch.js"></script>
 </head>
 
 <body>
@@ -12,7 +13,7 @@
     <a-assets>
       　<video id="video" src="VRAir23.mp4" preload="auto" autoplay></video>
     </a-assets>
-    <a-videosphere src="#video" rotation="0 -90 0"></a-videosphere>
+    <a-videosphere src="#video" rotation="0 -90 0" play-on-touch="#scene"></a-videosphere>
     <!-- 動画の autoplay が効かない場合用の、再生・停止ボタン -->
     <a-box id="play" position="-1 0 -1" scale="0.5 0.5 0.01" src="start2.jpeg"></a-box>
     <a-box id="stop" position="0 0 -1" scale="0.5 0.5 0.01" src="stop2.jpg"></a-box>
