@@ -34,6 +34,7 @@ AFRAME.registerComponent('linkbox2', {
         const element = this.el;　　//aframeのコンポーネントの考え方
         element.addEventListener('mouseenter', function () {　//マウスの代わりに視線でクリック
             console.log('mouseenter');
+            element.setAttribute('animation', 'property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true');
             setTimeout(toLink2, 2000); //toLink関数を実行
 
         });
@@ -50,6 +51,7 @@ AFRAME.registerComponent('linkbox3', {
         const element = this.el;　　//aframeのコンポーネントの考え方
         element.addEventListener('mouseenter', function () {　//マウスの代わりに視線でクリック
             console.log('mouseenter');
+            element.setAttribute('animation', 'property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true');
             setTimeout(toLink3, 2000); //toLink関数を実行
 
         });
