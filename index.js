@@ -18,6 +18,7 @@ AFRAME.registerComponent('linkbox1', {
         const element = this.el;　　//aframeのコンポーネントの考え方
         element.addEventListener('mouseenter', function () {　//マウスの代わりに視線でクリック
             console.log('mouseenter');
+            element.setAttribute('animation', 'property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true');
             setTimeout(toLink1, 2000); //toLink関数を実行
 
         });
